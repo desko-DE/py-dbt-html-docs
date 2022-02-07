@@ -8,12 +8,20 @@ class DBTDocParser:
         self.data = None
 
     def load_yaml(self):
+        """
+        Función para cargar un yaml como diccionario
+        :return: dict
+        """
         with open(self.yaml_file) as file:
             self.data = yaml.load(file, Loader=yaml.FullLoader)
             print("Yaml cargado...")
             return self.data
 
     def parser(self):
+        """
+        Iterador que pasa por cada una de las propiedades del yml y las inyecta en un template de HTML
+        :return: :type str
+        """
         dict_ = self.data
         template_base = """
         <html>
@@ -60,6 +68,9 @@ class DBTDocParser:
         return self.template
 
     def generate_html(self):
+        """
+        Funcion para generar HTML con el template generado
+        """
         html_template_name = "template.html"
         with open(html_template_name, 'w') as fd:
             fd.write(self.template)
