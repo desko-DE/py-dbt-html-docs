@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dbt_table_ejemplo
+    description: 'Esto es una tabla de ejemplo creada en el DW'
+    columns:
+        - name: id
+          description: "ID campo unico que identifica cada transaccion. Campo de cruce entre tablas del modelo"
+        - name: total_regs
+          description: "Cantidad de registros por id"
+        - name: ind_transaccion
+          description: "[TRUE | FALSE] Indicador de transacciones exitosas"
+        - name: monto_transaccion
+          description: "Dinero reportado en la transaccion"
+        - name: fecha_transaccion
+          description: "[YYYY-MM-DD] Fecha de la transaccion"
